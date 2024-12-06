@@ -1,55 +1,41 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Build PKGBUILDs
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches:
+      - main
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  # Build job
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest 
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build PKGBUILD in Arch Linux Docker container
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace archlinux:latest /bin/bash -c "
+            pacman -Sy --noconfirm base-devel git &&  
+            for dir in */; do
+              if [[ -f \"\$dir/PKGBUILD\" ]]; then
+                echo \"Building package in \$dir\"
+                cd \"\$dir\" && makepkg -si --noconfirm && cd ..
+              fi
+            done
+          "
+
+      - name: Upload packages to GitHub
+        uses: actions/upload-artifact@v3
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          name: packages
+          path: '**/*.pkg.tar.xz'
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-remote_theme: pages-themes/hacker@v0.2.0
-plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+      - name: Commit new packages to repository
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: "GitHub Actions"
+          author_email: "github-actions@github.com"
+          message: "Add compiled .pkg.tar.xz packages"
+          add: '**/*.pkg.tar.xz'
