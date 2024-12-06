@@ -17,7 +17,8 @@ jobs:
       - name: Build PKGBUILD in Arch Linux Docker container
         run: |
           docker pull —platform=linux/amd64 archlinux
-          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace archlinux /bin/bash -c "
+          docker tag archlinux arch
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace arch /bin/bash -c "
             pacman -Sy --noconfirm base-devel git &&  
             for dir in */; do
               if [[ -f \"\$dir/PKGBUILD\" ]]; then
