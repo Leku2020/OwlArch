@@ -11,6 +11,11 @@ source "qemu" "archlinux" {
   ssh_password      = "password"
   ssh_timeout       = "30m"
 
+  qemuargs = [
+    "-netdev", "user,id=net0,hostfwd=tcp::2222-:22",  # Redirección de puertos
+    "-device", "virtio-net-pci,netdev=net0"           # Interfaz de red virtio
+  ]
+
   boot_command = [
     "<esc><wait>",
     "setfont ter-116n<enter>",
