@@ -1,6 +1,6 @@
 # Definición del builder QEMU
 source "qemu" "archlinux" {
-  iso_url           = "https://mirror.archlinux.org/iso/latest/archlinux-*.iso"
+  iso_url           = "https://geo.mirror.pkgbuild.com/iso/2024.12.01/archlinux-2024.12.01-x86_64.iso"
   iso_checksum      = "56b246d1a569f1670c0f98198f5c9a32558d54d010cd3434356cc1e20ad97945"
   output_directory  = "output"
   vm_name           = "owlArch"
