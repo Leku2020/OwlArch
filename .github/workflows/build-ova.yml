@@ -22,12 +22,12 @@ jobs:
         
     - name: Validate Packer template
       run: |
-        packer validate packer/arch-template.json
-        
+        packer validate packer/arch-template.pkr.hcl
+
     - name: Build OVA
       run: |
-        packer init packer/arch-template.json
-        packer build packer/arch-template.json
+        packer init packer/arch-template.pkr.hcl
+        packer build packer/arch-template.pkr.hcl
 
     - name: Upload OVA artifact
       uses: actions/upload-artifact@v3
