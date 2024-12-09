@@ -26,7 +26,7 @@ jobs:
         curl -LO https://github.com/hashicorp/packer-plugin-qemu/releases/download/v1.1.0/packer-plugin-qemu_v1.1.0_x5.0_linux_amd64.zip
         unzip packer-plugin-qemu_v1.1.0_x5.0_linux_amd64.zip
         ls -R
-        mv packer-plugin-qemu ~/.config/packer/plugins/hashicorp.com/builder/qemu/1.1.0/
+        mv packer-plugin-qemu_v1.1.0_x5.0_linux_amd64 ~/.config/packer/plugins/hashicorp.com/builder/qemu/1.1.0/
 
     - name: Validate Packer template
       run: |
