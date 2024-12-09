@@ -19,10 +19,14 @@ jobs:
         sudo apt update
         sudo apt install -y packer qemu-kvm libvirt-daemon-system libvirt-clients genisoimage
         
+    - name: Clean existing Packer files
+      run: |
+        rm -f packer_1.9.3_linux_amd64.zip packer
+
     - name: Install Packer
       run: |
         curl -LO https://releases.hashicorp.com/packer/1.9.3/packer_1.9.3_linux_amd64.zip
-        unzip packer_1.9.3_linux_amd64.zip
+        unzip -o packer_1.9.3_linux_amd64.zip
         sudo mv packer /usr/local/bin/
 
     - name: Install Packer QEMU Plugin
