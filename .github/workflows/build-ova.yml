@@ -1,0 +1,30 @@
+name: Build OVA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-ova:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y packer qemu-kvm libvirt-daemon-system libvirt-clients genisoimage
+
+    - name: Build OVA
+      run: |
+        packer build packer/arch-template.json
+
+    - name: Upload OVA artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: arch-linux.ova
+        path: output/arch-linux.ova
