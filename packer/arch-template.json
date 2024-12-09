@@ -1,1 +1,32 @@
-
+{
+  "builders": [
+    {
+      "type": "qemu",
+      "iso_url": "https://mirror.archlinux.org/iso/latest/archlinux-*.iso",
+      "iso_checksum": "sha256",
+      "output_directory": "output",
+      "vm_name": "arch-linux",
+      "disk_size": 20000,
+      "headless": true,
+      "format": "ova",
+      "ssh_username": "archuser",
+      "ssh_password": "password",
+      "ssh_timeout": "30m",
+      "boot_command": [
+        "<esc><wait>",
+        "setfont ter-116n<enter>",
+        "root<enter><wait>",
+        "loadkeys us<enter>",
+        "curl -O http://{{ .HTTPIP }}:{{ .HTTPPort }}/setup.sh<enter>",
+        "chmod +x setup.sh<enter>",
+        "./setup.sh<enter>"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "../scripts/postinstall.sh"
+    }
+  ]
+}
