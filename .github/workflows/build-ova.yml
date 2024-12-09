@@ -21,7 +21,7 @@ jobs:
         
     - name: Clean existing Packer files
       run: |
-        rm -f packer_1.9.3_linux_amd64.zip packer
+        rm -rf packer_1.9.3_linux_amd64.zip packer
 
     - name: Install Packer
       run: |
