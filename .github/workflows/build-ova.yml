@@ -18,9 +18,27 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y packer qemu-kvm libvirt-daemon-system libvirt-clients genisoimage
+        
+    - name: Install Packer
+      run: |
+        curl -LO https://releases.hashicorp.com/packer/1.9.3/packer_1.9.3_linux_amd64.zip
+        unzip packer_1.9.3_linux_amd64.zip
+        sudo mv packer /usr/local/bin/
 
+    - name: Install Packer QEMU Plugin
+      run: |
+        mkdir -p ~/.config/packer/plugins/hashicorp.com/builder/qemu/1.0.0/
+        curl -LO https://releases.hashicorp.com/packer-plugin-qemu/1.0.0/packer-plugin-qemu_1.0.0_linux_amd64.zip
+        unzip packer-plugin-qemu_1.0.0_linux_amd64.zip
+        mv packer-plugin-qemu ~/.config/packer/plugins/hashicorp.com/builder/qemu/1.0.0/
+
+    - name: Validate Packer template
+      run: |
+        packer validate packer/arch-template.json
+        
     - name: Build OVA
       run: |
+        packer init packer/arch-template.json
         packer build packer/arch-template.json
 
     - name: Upload OVA artifact
