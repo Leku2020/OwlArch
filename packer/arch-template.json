@@ -4,7 +4,6 @@
       "type": "qemu",
       "iso_url": "https://mirror.archlinux.org/iso/latest/archlinux-*.iso",
       "iso_checksum": "56b246d1a569f1670c0f98198f5c9a32558d54d010cd3434356cc1e20ad97945",
-      "iso_checksum_type": "sha256",
       "output_directory": "output",
       "vm_name": "owlArch",
       "disk_size": 20000,
