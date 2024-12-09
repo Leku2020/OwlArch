@@ -12,8 +12,8 @@ source "qemu" "archlinux" {
   ssh_timeout       = "30m"
 
   qemuargs = [
-    "-netdev", "user,id=net0,hostfwd=tcp::2222-:22",  # Redirección de puertos
-    "-device", "virtio-net-pci,netdev=net0"           # Interfaz de red virtio
+    "-netdev", "user,id=net0,hostfwd=tcp::2222-:22",
+    "-device", "virtio-net-pci,netdev=net0"
   ]
 
   boot_command = [
