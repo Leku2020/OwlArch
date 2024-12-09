@@ -1,9 +1,6 @@
 name: Build OVA
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
