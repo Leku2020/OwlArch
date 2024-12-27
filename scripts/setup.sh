@@ -8,8 +8,8 @@ ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 hwclock --systohc
 
 # Idioma y teclado
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo "KEYMAP=us" > /etc/vconsole.conf
+echo "LANG=ee_ES.UTF-8" > /etc/locale.conf
+echo "KEYMAP=es" > /etc/vconsole.conf
 locale-gen
 
 # Nombre del host
@@ -17,7 +17,7 @@ echo "owlArch" > /etc/hostname
 cat <<EOF > /etc/hosts
 127.0.0.1   localhost
 ::1         localhost
-127.0.1.1   arch-vm.localdomain arch-vm
+127.0.1.1   owlArch
 EOF
 
 # Instalación mínima

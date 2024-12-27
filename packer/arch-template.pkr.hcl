@@ -12,8 +12,8 @@ source "qemu" "archlinux" {
   ssh_timeout       = "30m"
 
   qemuargs = [
-    "-netdev", "user,id=net0,hostfwd=tcp::2222-:22",
-    "-device", "virtio-net-pci,netdev=net0"
+    ["-netdev", "user,id=net0,hostfwd=tcp::2222-:22"],
+    ["-device", "virtio-net-pci,netdev=net0"]
   ]
 
   boot_command = [
@@ -32,6 +32,9 @@ build {
   sources = ["source.qemu.archlinux"]
 
   provisioner "shell" {
-    script = "./scripts/postinstall.sh"
+    # Para local
+    script = "/home/osArch/Desktop/owlArch/OwlArch/scripts/postinstall.sh"
+    # Para git
+    #script = "./scripts/postinstall.sh"
   }
 }
