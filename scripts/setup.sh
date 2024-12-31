@@ -26,3 +26,19 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt <<EOFCHROOT
 pacman -Syu --noconfirm
 EOFCHROOT
+
+set -euxo pipefail
+
+# Instalar y configurar SSH
+pacman -Sy --noconfirm openssh
+systemctl enable sshd
+systemctl start sshd
+
+# Crear el usuario SSH
+useradd -m -s /bin/bash archuser
+echo "archuser:password" | chpasswd
+echo "archuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# Permitir root por SSH (opcional, solo para debugging)
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+systemctl restart sshd

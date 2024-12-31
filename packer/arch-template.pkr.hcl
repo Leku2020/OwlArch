@@ -5,19 +5,22 @@ source "qemu" "archlinux" {
   output_directory  = "output"
   vm_name           = "owlArch"
   disk_size         = 20000
-  headless          = true
+  headless          = false
   format            = "qcow2"
-  ssh_username      = "owlarch"
-  ssh_password      = "password"
+  ssh_username      = "owlArch"
+  ssh_password      = "owlArch"
   ssh_timeout       = "30m"
 
   qemuargs = [
     ["-netdev", "user,id=net0,hostfwd=tcp::2222-:22"],
-    ["-device", "virtio-net-pci,netdev=net0"]
+    ["-device", "virtio-net-pci,netdev=net0"],
   ]
 
   boot_command = [
     "<esc><wait>",
+    "/arch/boot/x86_64/vmlinuz-linux initrd=/arch/boot/x86_64/initramfs-linux.img root=/dev/vda1 rw edd=off console=ttyS0<enter><wait>",
+    "<wait>",
+    "<enter><wait>",
     "setfont ter-116n<enter>",
     "root<enter><wait>",
     "loadkeys us<enter>",
