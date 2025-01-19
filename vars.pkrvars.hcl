@@ -1,0 +1,16 @@
+packer_password     = "packer"
+arch_add_pkgs       = "vim python python-cryptography"
+countries           = "all"
+is_uefi             = "true"
+template_name       = "mytemplate"
+ufw_allow_ssh_ip    = "10.8.2.0/24"
+ntp_pools           = "0.arch.pool.ntp.org, 1.arch.pool.ntp.org, 2.arch.pool.ntp.org, 3.arch.pool.ntp.org"
+locale              = "es_ES"
+
+cpu                 = "2"
+ram                 = "4096"
+disk_size           = "20480"
+headless            = "false"
+
+qemu_out_dir        = "."
+packer_build_type   = "qemu"

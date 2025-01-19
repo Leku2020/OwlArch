@@ -1,7 +1,7 @@
 #!/bin/bash
 
 packer plugins install github.com/hashicorp/qemu
-packer validate packer/arch-template.pkr.hcl
+packer validate source-arch-qemu.pkr.hcl
 
-packer init packer/arch-template.pkr.hcl
-packer build packer/arch-template.pkr.hcl
+packer init source-arch-qemu.pkr.hcl 
+packer build source-arch-qemu.pkr.hcl
