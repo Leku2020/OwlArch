@@ -12,25 +12,27 @@ hwclock --systohc
 
 # Particionar disco
 echo ">>>> SETUP: Partitioning drive ${DRIVE}..."
-parted ${DRIVE} --script mklabel gpt
-parted ${DRIVE} --script mkpart primary ext4 1MiB 8191MiB
+parted ${DRIVE} --script mklabel msdos
+parted ${DRIVE} --script mkpart primary ext4 1MiB 512MiB
+#parted ${DRIVE} --script set 1 bios_grub on  # Marcar esta partición como BIOS Boot
+#parted ${DRIVE} --script mkpart primary fat32 2MiB 512MiB
+parted ${DRIVE} --script mkpart primary ext4 512MiB 100%
 parted ${DRIVE} --script print
 parted ${DRIVE} --script set 1 boot on
+#parted ${DRIVE} set 2 esp on
 
 echo ">>>> SETUP: Formatting the partitions..."
-mkfs.ext4 /dev/vda1
-
+mkfs.ext4 /dev/vda2
+mkfs.fat -F 32 /dev/vda1
 echo ">>>> SETUP: Mounting the filesystems..."
-mount /dev/vda1 /mnt
-
+mount /dev/vda2 /mnt
+mount --mkdir /dev/vda1 /mnt/boot/efi
 
 # Instalación mínima
 echo ">>>> SETUP: Basic install..."
 echo ">>>> SETUP: Installing basic firmware..."
 pacstrap /mnt base linux linux-firmware
 pacstrap /mnt wpa_supplicant networkmanager
-
-pacstrap /mnt grub-bios os-prober ntfs-3g
 
 echo ">>>> SETUP: Generating fstabs..."
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -63,12 +65,13 @@ echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/ers
 
 echo ">>>> SETUP: Updating pacman repos and db..."
 pacman -Syu --noconfirm
-
+pacman -S --noconfirm linux linux-headers
 #echo ">>>> SETUP: Downloading Grub..."
-#pacman -S --noconfirm grub efibootmgr
-#ls /boot
-#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-#grub-mkconfig -o /boot/grub/grub.cfg
+pacman -S --noconfirm grub efibootmgr sudo
+grub-install --target=x86_64-efi efi-directory=/boot --bootloader-id=GRUB
+
+
+grub-mkconfig -o /boot/grub/grub.cfg
 
 
 echo ">>>> SETUP: Installing Qemu Guest Additions and NFS utilities..."
