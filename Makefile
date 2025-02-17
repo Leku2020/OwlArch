@@ -1,11 +1,11 @@
-VARFILE = "vars/vars.pkr.hcl"
+VARFILE = "vars/vars.pkrvars.hcl"
 
 init:
 	packer init packer
 
 validate:
-	packer validate -var-file $(VARFILE) packer
+	packer validate -var-file $(VARFILE)  .
 
 build:
-	packer build -on-error=ask -timestamp-ui -var-file $(VARFILE) pakcer
+	packer build -on-error=ask -timestamp-ui -var-file $(VARFILE) .
 
