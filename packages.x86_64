@@ -16,6 +16,7 @@ cryptsetup
 darkhttpd
 ddrescue
 dhclient
+dhcpcd
 diffutils
 dmidecode
 dmraid
@@ -128,6 +129,8 @@ zsh
 xf86-video-qxl
 xf86-video-intel
 xf86-video-amdgpu
+
+# Extra configs
 xorg
 xorg-server
 gnome
@@ -139,3 +142,6 @@ os-prober
 git
 networkmanager
 network-manager-applet
+zsh-completions
+zsh-syntax-highlighting
+neovim
