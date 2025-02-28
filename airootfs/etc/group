@@ -2,4 +2,5 @@ root:x:0:root
 adm:x:4:owlArch
 wheel:x:10:owlArch
 uucp:x:14:owlArch
+vboxusers:x:108:owlArch
 owlArch:x:1000:

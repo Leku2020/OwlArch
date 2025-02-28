@@ -4,7 +4,7 @@
 iso_name="owlArch"
 iso_label="ARCH_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Leku <>"
-iso_application="Arch Linux Live/Rescue DVD"
+iso_application="OwlArch Live/Rescue DVD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
