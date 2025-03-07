@@ -42,3 +42,6 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
 fi
+
+chmod +x /root/setup_users.sh
+/root/setup_users.sh

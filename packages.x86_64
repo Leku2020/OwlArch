@@ -7,9 +7,10 @@ linux
 linux-firmware
 linux-atm
 systemd-resolvconf
-mkinitcpio
+mkinitcpioS
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+acl
 
 
 # Bootloaders
