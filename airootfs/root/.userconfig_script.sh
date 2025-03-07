@@ -3,7 +3,10 @@
 # Creation of groups
 groupadd admin
 groupadd basicuser
-groupadd techuser
+groupadd binexpGroup
+groupadd forensicGroup
+groupadd netsecGroup
+groupadd osintGroup
 
 # User creation with the generated groups assigned
 useradd -m -g basicuser analyst
@@ -14,5 +17,5 @@ useradd -m -g techuser netsec
 useradd -m -g techuser osint
 
 # Configuration of ACL's
-setfacl -m g:basicuser:r-- /usr/bin/tech
-setfacl -m g:techuser:rx /usr/bin/tech
+setfacl -m g:basicuser:r-- /usr/bin/tools
+setfacl -m g:techuser:rx /usr/bin/tools
