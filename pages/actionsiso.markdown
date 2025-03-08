@@ -4,7 +4,7 @@ title: Actions ISO
 permalink: /actionsiso
 ---
 
-[🔙 Go back home](/)
+[🔙 Go back home](/OwlArch/)
 
 # GitHub Actions Pipeline for OwlArch ISO Builds
 

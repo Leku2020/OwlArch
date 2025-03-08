@@ -4,7 +4,7 @@ title: Contribute
 permalink: /contribute
 ---
 
-[🔙 Go back home](/)
+[🔙 Go back home](/OwlArch/)
 
 # Contributing to OwlArch Linux Distribution
 

@@ -4,7 +4,7 @@ title: Packages
 permalink: /packages
 ---
 
-[🔙 Go back home](/)
+[🔙 Go back home](/OwlArch/)
 
 # OwlArch Installed Packages  
 

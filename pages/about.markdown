@@ -4,7 +4,7 @@ title: About
 permalink: /about
 ---
 
-[🔙 Go back home](/)
+[🔙 Go back home](/OwlArch/)
 
 # About OwlArch
 

@@ -60,7 +60,7 @@ For more info press [here](packages)
 ---
 
 ## Documentation  
-- **User Guide**: [OwlArch Documentation](https://leku2020.github.io/OwlArch)  
+- **About**: [About](about)  
 - **Build Process**: [ISO Pipeline](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
 - **Tool Docs**: [Package Repository](https://leku2020.github.io/owlArchRepo)  
 
