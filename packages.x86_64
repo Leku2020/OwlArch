@@ -11,6 +11,8 @@ mkinitcpioS
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
 acl
+iptables
+iptables-nft
 
 
 # Bootloaders

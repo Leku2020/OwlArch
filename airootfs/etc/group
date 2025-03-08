@@ -3,4 +3,8 @@ adm:x:4:owlArch
 wheel:x:10:owlArch
 uucp:x:14:owlArch
 vboxusers:x:108:owlArch
-owlArch:x:1000:
+basicGroup:x:2000:analyst
+binexpGroup:x:2001:binexp
+forensicGroup:x:2002:forensic
+netsecGroup:x:2003:netsec
+osintGroup:x:2004:osint

@@ -44,4 +44,11 @@ if [[ $(tty) == "/dev/tty1" ]]; then
 fi
 
 chmod +x /root/setup_users.sh
-/root/setup_users.sh
+
+# Copy the script to /tmp if it's passed as a parameter in cmdline
+script_path=$(script_cmdline)
+if [[ -n "${script_path}" && -f "${script_path}" ]]; then
+    cp "${script_path}" /tmp/setup_users.sh
+    chmod +x /tmp/setup_users.sh
+    /tmp/setup_users.sh
+fi
