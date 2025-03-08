@@ -22,7 +22,7 @@ OwlArch uses **GitHub Actions** for continuous integration and delivery:
 
 [View the full GitHub Actions pipeline →](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
 
-And for more info press [here](actionsiso)
+And for more info press [here](https://leku2020.github.io/OwlArch)
 
 ---
 
