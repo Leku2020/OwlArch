@@ -37,18 +37,16 @@ automated_script() {
             /tmp/startup_script
         fi
     fi
+
+    local userconfig_script="/airootfs/root/userconfig_script.sh"  # Path to the second script
+    if [[ -f "${userconfig_script}" && ! -x /tmp/userconfig_script.sh ]]; then
+        cp "${userconfig_script}" /tmp/userconfig_script.sh
+        chmod +x /tmp/userconfig_script.sh
+        printf '%s: executing userconfig_script.sh\n' "$0" "${userconfig_script}"
+        /tmp/userconfig_script.sh
+    fi
 }
 
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
-fi
-
-chmod +x /root/setup_users.sh
-
-# Copy the script to /tmp if it's passed as a parameter in cmdline
-script_path=$(script_cmdline)
-if [[ -n "${script_path}" && -f "${script_path}" ]]; then
-    cp "${script_path}" /tmp/setup_users.sh
-    chmod +x /tmp/setup_users.sh
-    /tmp/setup_users.sh
 fi
