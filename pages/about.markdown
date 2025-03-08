@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About
-permalink: /about/
+permalink: /about
 ---
 
 [🔙 Go back home](/)
