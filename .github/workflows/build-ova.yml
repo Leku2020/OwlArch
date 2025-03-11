@@ -3,8 +3,8 @@ on:
     branches:
       - main
       - 'feature/*'
-    tags:
-      - "v*"
+    paths:
+    - 'vm/**'
   workflow_dispatch:
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Create symlinks
         run: |
-          ln -s /usr/lib/systemd/system/vboxservice.service vm/airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service && \
+          ln -s /usr/lib/systemd/system/vboxservice.service vm/airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service
           ln -sf /usr/lib/systemd/system/gdm.service vm/airootfs/etc/systemd/system/display-manager.service
 
       - name: Build ISO
@@ -45,20 +45,10 @@ jobs:
           name: owlArchIso
           path: out/*.iso
 
-  approval:
-    needs: build-ova
-    if: startsWith(github.ref, 'refs/tags/v')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Esperando aprobación manual
-        uses: hmarr/auto-approve-action@v4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
   release:
-    needs: approval
+    needs: build-ova
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
