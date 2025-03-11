@@ -7,7 +7,7 @@ linux
 linux-firmware
 linux-atm
 systemd-resolvconf
-mkinitcpioS
+mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
 acl
