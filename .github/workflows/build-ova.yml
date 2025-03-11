@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: archlinux:latest
-      options: --privileged  # Permite operaciones de bajo nivel
+      options: --privileged
     steps:
       - name: Install dependencies
         run: |
