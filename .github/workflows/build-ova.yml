@@ -20,11 +20,15 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      - name: Where am i
+        run: |
+          ls
 
       - name: Build ISO
         run: |
-          mkarchiso -v -w /workspace/work -o /workspace/out .
-          
+          mkarchiso -v -w /workspace/work -o /workspace/out vm/
+
       - name: Run Docker container
         run: |
           docker run --rm -v ${{ github.workspace }}:/$GITHUB_WORKSPACE -w $GITHUB_WORKSPACE archlinux:latest /bin/bash -c "
