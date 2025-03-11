@@ -33,7 +33,7 @@ jobs:
             echo 'paso5' && \
             ln -s /usr/lib/systemd/system/vboxservice.service airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service && \
             ln -sf /usr/lib/systemd/system/gdm.service airootfs/etc/systemd/system/display-manager.service && \
-            sudo mkarchiso -v -w $GITHUB_WORKSPACE/work -o $GITHUB_WORKSPACE/out
+            sudo mkarchiso -v -w $GITHUB_WORKSPACE/work -o $GITHUB_WORKSPACE/out .
           "
 
       - name: Upload OVA artifact
