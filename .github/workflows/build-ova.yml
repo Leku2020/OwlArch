@@ -17,11 +17,10 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --rm -v $(pwd):/workspace -w /workspace archlinux:latest /bin/bash -c "
+          docker run --rm -v ${{ github.workspace }}:/$GITHUB_WORKSPACE -w $GITHUB_WORKSPACE archlinux:latest /bin/bash -c "
             useradd -m builder && echo 'builder:password' | chpasswd && \
             pacman -Sy --noconfirm sudo base-devel git && \
             echo 'builder ALL=(ALL) NOPASSWD: /usr/bin/pacman' >> /etc/sudoers && \
-            echo 'paso1' && \
             chown -R builder:builder $GITHUB_WORKSPACE && \
             echo 'paso2' && \
             sudo pacman -Syu --noconfirm && \
