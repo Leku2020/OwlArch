@@ -40,7 +40,7 @@ And for more info press [here](actionsiso)
 | **Reverse Engineering** | Ghidra, Radare2, Capstone, Binary Ninja (optional)                    |  
 | **Malware Analysis**    | Volatility, Pwndbg, Cuckoo Sandbox (integration)                      |  
 | **Network Analysis**    | Wireshark, Suricata, Zeek, TCPDump                                    |  
-| **OSINT**               | Maltego, Spiderfoot, theHarvester, Shodan CLI                         |  
+| **OSINT**               | Maltego, Spiderfoot, theHarvester, Shodan CLI, OwlSearch              |  
 | **Debugging**           | GDB, Frida, QEMU                                                      |  
 
 For more info press [here](packages)
