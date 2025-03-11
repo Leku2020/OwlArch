@@ -10,11 +10,21 @@ on:
 jobs:
   build-ova:
     runs-on: ubuntu-latest
-
+    container:
+      image: archlinux:latest
+      options: --privileged  # Permite operaciones de bajo nivel
     steps:
-      - name: Checkout code
+      - name: Install dependencies
+        run: |
+          pacman -Syu --noconfirm archiso git base-devel
+
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Build ISO
+        run: |
+          mkarchiso -v -w /workspace/work -o /workspace/out .
+          
       - name: Run Docker container
         run: |
           docker run --rm -v ${{ github.workspace }}:/$GITHUB_WORKSPACE -w $GITHUB_WORKSPACE archlinux:latest /bin/bash -c "
