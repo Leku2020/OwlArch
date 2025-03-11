@@ -27,15 +27,15 @@ jobs:
             echo 'paso3' && \
             sudo pacman -S --noconfirm archiso arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox && \
             echo 'paso4' && \
-            #su - builder -c '
+            #su - builder -c ' && \
             cd $GITHUB_WORKSPACE/vm  && \
             mkdir $GITHUB_WORKSPACE/work && \
             mkdir $GITHUB_WORKSPACE/out && \
-            ls
+            ls && \ 
             ln -s /usr/lib/systemd/system/vboxservice.service airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service && \
             ln -sf /usr/lib/systemd/system/gdm.service airootfs/etc/systemd/system/display-manager.service && \
             sudo mkarchiso -v -w $GITHUB_WORKSPACE/work -o $GITHUB_WORKSPACE/out .  && \
-            # '
+            # ' && \
           "
 
       - name: Upload OVA artifact
