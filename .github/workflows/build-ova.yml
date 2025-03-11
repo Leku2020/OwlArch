@@ -16,18 +16,28 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          pacman -Syu --noconfirm archiso git base-devel
-
+          pacman -Syu --noconfirm archiso git base-devel arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox
+          
       - name: Checkout repository
         uses: actions/checkout@v4
         
       - name: Where am i
         run: |
           ls
+      
+      - name: Create work and out
+        run: |
+          mkdir work
+          mkdir out
+
+      - name: Create symlinks
+        run: |
+          ln -s /usr/lib/systemd/system/vboxservice.service vm/airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service && \
+          ln -sf /usr/lib/systemd/system/gdm.service vm/airootfs/etc/systemd/system/display-manager.service
 
       - name: Build ISO
         run: |
-          mkarchiso -v -w /workspace/work -o /workspace/out vm/
+          mkarchiso -v -w work -o out vm/
 
       - name: Run Docker container
         run: |
