@@ -1,10 +1,7 @@
-root:x:0:root
-adm:x:4:owlArch
-wheel:x:10:owlArch
-uucp:x:14:owlArch
-vboxusers:x:108:owlArch
-basicGroup:x:2000:analyst
-binexpGroup:x:2001:binexp
-forensicGroup:x:2002:forensic
-netsecGroup:x:2003:netsec
-osintGroup:x:2004:osint
+root:x:0:
+owlArch:x:1000:owlArch
+analyst:x:1001:analyst
+binexp:x:1002:binexp
+forensic:x:1003:forensic
+netsec:x:1004:netsec
+osint:x:1005:osint
