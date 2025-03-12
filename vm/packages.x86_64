@@ -118,7 +118,7 @@ xf86-video-vesa
 
 
 capstone
-frida
+python-frida
 gdb
 ghidra
 ivre
@@ -133,3 +133,6 @@ theharvester
 volatility
 wireshark-cli
 zeek
+
+memtest86+
+memtest86+-efi
