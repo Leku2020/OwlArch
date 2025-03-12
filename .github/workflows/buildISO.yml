@@ -1,4 +1,4 @@
-name: Build OVA
+name: Build ISO
 
 on:
   push:
