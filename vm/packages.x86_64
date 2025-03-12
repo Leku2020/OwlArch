@@ -129,7 +129,7 @@ radare2
 spiderfoot
 suricata
 tcpdump
-theharvester
+theharvester-git
 volatility
 wireshark-cli
 zeek
