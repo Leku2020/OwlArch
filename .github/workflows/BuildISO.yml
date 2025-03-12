@@ -56,9 +56,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download OVA artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: owlArchIso
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           path: ./out
 
       - name: Create GitHub Release
