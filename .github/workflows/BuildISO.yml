@@ -23,14 +23,19 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          pacman -Syu --noconfirm archiso git base-devel arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox virtualbox-host-modules-arch virtualbox-guest-utils
+          pacman -Syu --noconfirm archiso git base-devel arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox virtualbox-host-modules-arch virtualbox-guest-utils acl
       - name: Checkout repository
         uses: actions/checkout@v4
         
       - name: Where am i
         run: |
           ls
-      
+            - name: Install dependencies
+
+      - name: Remove ACLs from profile
+        run: |
+          find vm -exec setfacl -b {} \;
+
       - name: Create work and out
         run: |
           mkdir work
