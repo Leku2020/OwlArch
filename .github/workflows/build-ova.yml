@@ -1,3 +1,5 @@
+name: Build OVA
+
 on:
   push:
     branches:
