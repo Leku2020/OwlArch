@@ -27,11 +27,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
-      - name: Where am i
-        run: |
-          ls
-            - name: Install dependencies
-
       - name: Remove ACLs from profile
         run: |
           find vm -exec setfacl -b {} \;
