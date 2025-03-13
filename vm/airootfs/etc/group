@@ -4,4 +4,3 @@ analyst:x:1001:analyst
 binexp:x:1002:binexp
 forensic:x:1003:forensic
 netsec:x:1004:netsec
-osint:x:1005:osint
