@@ -1,4 +1,4 @@
-root:x:0:
+root:x:0:archie
 owlArch:x:1000:owlArch
 analyst:x:1001:analyst
 binexp:x:1002:binexp
