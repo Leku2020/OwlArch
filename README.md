@@ -20,7 +20,7 @@ OwlArch uses **GitHub Actions** for continuous integration and delivery:
 - **Artifact Management**: ISOs uploaded to GitHub Releases for easy access  
 - **Testing**: Built-in validation for package integrity and tool functionality  
 
-[View the full GitHub Actions pipeline →](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
+[View the full GitHub Actions pipeline →](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows)  
 
 And for more info press [here](https://leku2020.github.io/OwlArch)
 
@@ -54,7 +54,7 @@ For more info press [here](packages)
 
 ## Documentation  
 - **User Guide**: [OwlArch Documentation](https://leku2020.github.io/OwlArch)  
-- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
+- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows)  
 - **Tool Docs**: [Package Repository](https://leku2020.github.io/owlArchRepo)  
 
 ---
