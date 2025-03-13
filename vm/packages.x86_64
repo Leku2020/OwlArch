@@ -115,8 +115,6 @@ virtualbox-host-modules-arch
 virtualbox-guest-utils
 xf86-video-vesa
 
-
-
 capstone
 python-frida
 gdb
