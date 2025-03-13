@@ -8,7 +8,7 @@ OwlArch is an Arch Linux-based distribution designed for **malware analysis**, *
 ## Key Features  
 - **Pre-installed Tools**: Plenty of security tools for malware analysis, network forensics, and OSINT  
 - **Automated Builds**: Daily ISO updates via GitHub Actions  
-- **Privacy-First**: Brave browser, DNS-over-HTTPS, and hardened kernel configs  
+- **Privacy-First**: Brave browser, and hardened kernel configs  
 - **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox  
 - **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/owlArchRepo)  
 
