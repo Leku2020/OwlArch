@@ -16,7 +16,7 @@ OwlArch is an Arch Linux-based distribution designed for **malware analysis**, *
 - **Automated Builds**: Daily ISO updates via GitHub Actions  
 - **Privacy-First**: Brave browser, DNS-over-HTTPS, and hardened kernel configs  
 - **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox  
-- **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/owlArchRepo)  
+- **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/OwlArchRepo)  
 
 ---
 
@@ -27,7 +27,7 @@ OwlArch uses **GitHub Actions** for continuous integration and delivery:
 - **Artifact Management**: ISOs uploaded to GitHub Releases for easy access  
 - **Testing**: Built-in validation for package integrity and tool functionality  
 
-[View the full GitHub Actions pipeline →](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
+[View the full GitHub Actions pipeline →](https://github.com/Leku2020/OwlArchRepo/blob/main/.github/workflows/build-ova.yml)  
 
 And for more info press [here](actionsiso)
 
@@ -49,7 +49,7 @@ For more info press [here](packages)
 
 ## Quick Start  
 1. **Download ISO**:  
-   [Latest Release](https://github.com/Leku2020/owlArchRepo/releases) | [SHA256 Checksum](https://leku2020.github.io/OwlArch/checksums.txt)  
+   [Latest Release](https://github.com/Leku2020/OwlArchRepo/releases) | [SHA256 Checksum](https://leku2020.github.io/OwlArch/checksums.txt)  
 
 2. **Run Tools**:  
    ```bash  
@@ -61,8 +61,8 @@ For more info press [here](packages)
 
 ## Documentation  
 - **About**: [About](about)  
-- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows/build-ova.yml)  
-- **Tool Docs**: [Package Repository](https://leku2020.github.io/owlArchRepo)  
+- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/OwlArchRepo/blob/main/.github/workflows/build-ova.yml)  
+- **Tool Docs**: [Package Repository](https://leku2020.github.io/OwlArchRepo)  
 
 ---
 

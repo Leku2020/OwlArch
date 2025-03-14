@@ -61,8 +61,8 @@ Thank you for contributing to OwlArch! This guide helps you contribute to our ma
 ### Full ISO Build Test  
 ```bash  
 # Clone repository  
-git clone https://github.com/Leku2020/owlArchRepo  
-cd owlArchRepo  
+git clone https://github.com/Leku2020/OwlArchRepo  
+cd OwlArchRepo  
 
 # Run build container  
 docker run --rm -v $(pwd):/build -w /build archlinux:latest bash -c "  

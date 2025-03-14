@@ -10,7 +10,7 @@ OwlArch is an Arch Linux-based distribution designed for **malware analysis**, *
 - **Automated Builds**: Daily ISO updates via GitHub Actions  
 - **Privacy-First**: Brave browser, and hardened kernel configs  
 - **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox  
-- **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/owlArchRepo)  
+- **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/OwlArchRepo)  
 
 ---
 ## Automated Build Process  
@@ -20,7 +20,7 @@ OwlArch uses **GitHub Actions** for continuous integration and delivery:
 - **Artifact Management**: ISOs uploaded to GitHub Releases for easy access  
 - **Testing**: Built-in validation for package integrity and tool functionality  
 
-[View the full GitHub Actions pipeline →](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows)  
+[View the full GitHub Actions pipeline →](https://github.com/Leku2020/OwlArchRepo/blob/main/.github/workflows)  
 
 And for more info press [here](https://leku2020.github.io/OwlArch)
 
@@ -42,7 +42,7 @@ For more info press [here](packages)
 
 ## Quick Start  
 1. **Download ISO**:  
-   [Latest Release](https://github.com/Leku2020/owlArchRepo/releases) | [SHA256 Checksum](https://leku2020.github.io/OwlArch/checksums.txt)  
+   [Latest Release](https://github.com/Leku2020/OwlArchRepo/releases) | [SHA256 Checksum](https://leku2020.github.io/OwlArch/checksums.txt)  
 
 2. **Run Tools**:  
    ```bash  
@@ -54,8 +54,8 @@ For more info press [here](packages)
 
 ## Documentation  
 - **User Guide**: [OwlArch Documentation](https://leku2020.github.io/OwlArch)  
-- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/owlArchRepo/blob/main/.github/workflows)  
-- **Tool Docs**: [Package Repository](https://leku2020.github.io/owlArchRepo)  
+- **Build Process**: [ISO Pipeline](https://github.com/Leku2020/OwlArchRepo/blob/main/.github/workflows)  
+- **Tool Docs**: [Package Repository](https://leku2020.github.io/OwlArchRepo)  
 
 ---
 

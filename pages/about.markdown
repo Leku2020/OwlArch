@@ -22,11 +22,11 @@ For build instructions, tool usage guides, and analysis workflows:
 
 ## Source Code
 - **Distribution Repository**:  
-  [OwlArchRepo](https://github.com/Leku2020/owlArchRepo)  
+  [OwlArchRepo](https://github.com/Leku2020/OwlArchRepo)  
   Contains build configurations and automation workflows
 
 - **Repository Documentation**:  
-  [OwlArchRepo Website](https://leku2020.github.io/owlArchRepo)  
+  [OwlArchRepo Website](https://leku2020.github.io/OwlArchRepo)  
   Hosts documentation and repo information
 
 - **Web Documentation**:  

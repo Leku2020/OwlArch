@@ -82,24 +82,24 @@ Complete list of packages included in the OwlArch distribution, organized by cat
 ## Security & Analysis Tools  
 <table class="package-table">  
   <tr><th>Package</th><th>Description</th></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/brave">Brave</a></td><td>Privacy-focused web browser</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/capstone">Capstone</a></td><td>Disassembly and reverse engineering framework</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/frida">Frida</a></td><td>Dynamic instrumentation toolkit</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/gdb">GDB</a></td><td>GNU Debugger</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/ghidra">Ghidra</a></td><td>Reverse engineering framework</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/ivre">IVRE</a></td><td>Network reconnaissance and OSINT analysis</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/maltego">Maltego</a></td><td>OSINT data visualization platform</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/pwndbg">Pwndbg</a></td><td>GDB extension for exploit development</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/shodan">Shodan</a></td><td>Exposed device discovery CLI</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/radare2">Radare2</a></td><td>Binary analysis toolkit</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/spiderfoot">Spiderfoot</a></td><td>OSINT automation tool</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/suricata">Suricata</a></td><td>Intrusion detection system</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/tcpdump">TCPDump</a></td><td>Command-line packet sniffer</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/theharvester">theHarvester</a></td><td>Email/subdomain enumeration tool</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/volatility">Volatility</a></td><td>Memory forensics framework</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/wireshark">Wireshark</a></td><td>Network protocol analyzer</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/zeek">Zeek</a></td><td>Network security monitoring</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/owlArchRepo/owlsearch">OwlSearch</a></td><td>Malware OSINT identifier and analyser helped by VirusTotal and MalwareBazaar</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/brave">Brave</a></td><td>Privacy-focused web browser</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/capstone">Capstone</a></td><td>Disassembly and reverse engineering framework</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/frida">Frida</a></td><td>Dynamic instrumentation toolkit</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/gdb">GDB</a></td><td>GNU Debugger</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/ghidra">Ghidra</a></td><td>Reverse engineering framework</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/ivre">IVRE</a></td><td>Network reconnaissance and OSINT analysis</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/maltego">Maltego</a></td><td>OSINT data visualization platform</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/pwndbg">Pwndbg</a></td><td>GDB extension for exploit development</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/shodan">Shodan</a></td><td>Exposed device discovery CLI</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/radare2">Radare2</a></td><td>Binary analysis toolkit</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/spiderfoot">Spiderfoot</a></td><td>OSINT automation tool</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/suricata">Suricata</a></td><td>Intrusion detection system</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/tcpdump">TCPDump</a></td><td>Command-line packet sniffer</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/theharvester">theHarvester</a></td><td>Email/subdomain enumeration tool</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/volatility">Volatility</a></td><td>Memory forensics framework</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/wireshark">Wireshark</a></td><td>Network protocol analyzer</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/zeek">Zeek</a></td><td>Network security monitoring</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/owlsearch">OwlSearch</a></td><td>Malware OSINT identifier and analyser helped by VirusTotal and MalwareBazaar</td></tr>  
 </table>  
 
 ---
@@ -115,7 +115,7 @@ Complete list of packages included in the OwlArch distribution, organized by cat
 ---
 
 ## Package Repository  
-All packages are maintained in the [OwlArch GitHub Repo](https://github.com/Leku2020/owlArchRepo). For documentation on creating custom packages, see the OwlArch Repository [Documentation](https://leku2020.github.io/owlArchRepo/).  
+All packages are maintained in the [OwlArch GitHub Repo](https://github.com/Leku2020/OwlArchRepo). For documentation on creating custom packages, see the OwlArch Repository [Documentation](https://leku2020.github.io/OwlArchRepo/).  
 
 <style>  
 .package-table {  
