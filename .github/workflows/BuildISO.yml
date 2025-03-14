@@ -15,7 +15,7 @@ on:
           default: 'V....'
 
 jobs:
-  build-ova:
+  build-ISO:
     runs-on: ubuntu-latest
     container:
       image: archlinux:latest
@@ -45,21 +45,21 @@ jobs:
         run: |
           mkarchiso -v -w work -o out vm/
 
-      - name: Upload OVA artifact
+      - name: Upload ISO artifact
         uses: actions/upload-artifact@v4
         with:
           name: owlArchIso
           path: out/*.iso
 
   release:
-    needs: build-ova
+    needs: build-ISO
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download OVA artifact
+      - name: Download ISO artifact
         uses: actions/download-artifact@v4
         with:
           name: owlArchIso

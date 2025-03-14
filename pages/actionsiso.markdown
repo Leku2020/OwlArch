@@ -22,7 +22,7 @@ This workflow automates the generation and deployment of OwlArch ISO images usin
 ---
 
 ## Jobs Breakdown  
-### 1. `build-ova`  
+### 1. `build-ISO`  
 Handles the complete ISO build process in an Arch Linux container.  
 
 **Steps:**  
