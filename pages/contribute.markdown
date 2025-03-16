@@ -61,8 +61,8 @@ Thank you for contributing to OwlArch! This guide helps you contribute to our ma
 ### Full ISO Build Test  
 ```bash  
 # Clone repository  
-git clone https://github.com/Leku2020/OwlArchRepo  
-cd OwlArchRepo  
+git clone https://github.com/Leku2020/OwlArch
+cd OwlArch
 
 # Run build container  
 docker run --rm -v $(pwd):/build -w /build archlinux:latest bash -c "  
@@ -91,7 +91,8 @@ qemu-system-x86_64 -cdrom out/owlArch-*.iso -m 4G
 
 ### Build Failures  
 - **Missing Dependencies**: Ensure all packages in `packages.x86_64` exist in:  
-  - Official Arch repos  
+  - Official Arch repos 
+  - OwlArch repo 
   - AUR (with proper build instructions)  
 - **Filesystem Conflicts**: Check for overlapping files in `airootfs/`  
 
@@ -99,10 +100,18 @@ qemu-system-x86_64 -cdrom out/owlArch-*.iso -m 4G
 
 ## Deployment Process  
 
+### For ISOs
+
 On `main` branch push:  
 1. GitHub Actions builds ISO  
+
+On manual launch:
+1. GitHub Actions builds ISO  
 2. Uploads artifact to [Releases](https://github.com/Leku2020/OwlArch/releases)  
-3. Updates documentation at [OwlArch Docs](https://leku2020.github.io/OwlArch)  
+
+For Pages:
+On `main` branch push:  
+1. Updates documentation at [OwlArch Docs](https://leku2020.github.io/OwlArch)  
 
 ---
 

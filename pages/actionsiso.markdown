@@ -6,104 +6,84 @@ permalink: /actionsiso
 
 [🔙 Go back home](/OwlArch/)
 
-# GitHub Actions Pipeline for OwlArch ISO Builds
 
-## Overview  
-This workflow automates the generation and deployment of OwlArch ISO images using GitHub Actions. It handles dependency installation, containerized builds, artifact management, and release automation for the Arch Linux-based distribution tailored for malware analysis and OSINT.
+# GitHub Actions Workflow for Building OwlArch ISO
 
----
+This document outlines the structure and functionality of a GitHub Actions workflow designed to build an OwlArch ISO. The workflow is triggered by specific events and includes steps to install dependencies, build the ISO, and optionally create a GitHub release.
 
-## Workflow Triggers  
-- On every push to:  
-  - `main` branch  
-  - Branches matching `feature/**` pattern  
-- Manual execution via GitHub UI (`workflow_dispatch`)
+## Workflow Triggers
 
----
+The workflow is triggered under the following conditions:
 
-## Jobs Breakdown  
-### 1. `build-ISO`  
-Handles the complete ISO build process in an Arch Linux container.  
+1. **Push Events**:
+   - Activates when changes are pushed to the `main` branch or any branch matching the pattern `feature/*`.
+   - Only triggers if changes are made within the `vm/**` directory.
 
-**Steps:**  
-- **Checkout code**  
-  Fetches repository contents using `actions/checkout@v3`.  
+2. **Manual Trigger (`workflow_dispatch`)**:
+   - Allows manual execution of the workflow via the GitHub UI.
+   - Requires an input parameter:
+     - **ReleaseName**: A required field with a default value of `V....`.
 
-- **Containerized Build**  
-  Runs in `archlinux:latest` Docker container:  
-  ```bash  
-  # System update & dependencies  
-  sudo pacman -Syu --noconfirm  
-  sudo pacman -S --noconfirm archiso arch-install-scripts [...] qemu shellcheck python-docutils  
+## Jobs in the Workflow
 
-  # Workspace setup  
-  mkdir $GITHUB_WORKSPACE/work  
-  mkdir $GITHUB_WORKSPACE/out  
+### 1. Build ISO Job
 
-  # ISO generation  
-  sudo mkarchiso -v -w $GITHUB_WORKSPACE/work -o $GITHUB_WORKSPACE/out  
-  ```  
+#### Environment:
+- Runs on: `ubuntu-latest`
+- Container: Uses the `archlinux:latest` Docker image with `--privileged` mode for elevated permissions.
 
-- **Artifact Upload**  
-  Stores ISO artifact (`owlArchIso`) using `actions/upload-artifact@v3`.  
+#### Steps:
+1. **Install Dependencies**:
+   - Installs necessary packages using `pacman`, including tools like `archiso`, `git`, `squashfs-tools`, and others required for building the ISO.
 
-- **Release Automation**  
-  Creates GitHub Release on `main` branch pushes using `softprops/action-gh-release@v1`:  
-  - Attaches ISO artifact  
-  - Uses `GITHUB_TOKEN` for authentication  
+2. **Checkout Repository**:
+   - Uses the `actions/checkout@v4` action to clone the repository into the workspace.
 
----
+3. **Remove ACLs from Profile**:
+   - Removes Access Control Lists (ACLs) from files in the `vm` directory to ensure compatibility during the build process.
 
-## Technical Specifications  
-- **Base Image**: Official Arch Linux container  
-- **Build Tools**:  
-  - `mkarchiso` (ISO builder)  
-  - `arch-install-scripts` (System configuration)  
-  - QEMU/OVMF (Virtualization support)  
-- **Workspace Structure**:  
-  ```  
-  $GITHUB_WORKSPACE/  
-  ├── work/    # Temporary build directory  
-  └── out/     # Final ISO output location  
-  ```  
+4. **Create Work and Out Directories**:
+   - Creates two directories:
+     - `work`: Temporary workspace for the build process.
+     - `out`: Directory where the final ISO will be stored.
 
----
+5. **Create Symlinks**:
+   - Sets up symbolic links for systemd services:
+     - Links `vboxservice.service` to enable VirtualBox guest services.
+     - Links `gdm.service` as the display manager service.
 
-## Artifact Management  
-- **ISO Artifact**:  
-  - Name: `owlArchIso`  
-  - Retention: 90 days (GitHub default)  
-  - Pattern: `$GITHUB_WORKSPACE/out/*.iso`  
+6. **Build ISO**:
+   - Executes the `mkarchiso` command to generate the ISO file using the configuration in the `vm` directory.
 
----
+7. **Upload ISO Artifact**:
+   - Uploads the generated ISO file as a GitHub artifact named `owlArchIso`.
 
-## Release Process  
-- **Conditions**: Only triggers on `main` branch pushes  
-- **Components**:  
-  - Tagged release version  
-  - Attached ISO artifact  
-  - Automatic changelog from commit history  
+### 2. Release Job
 
----
+#### Conditions:
+- Depends on the successful completion of the `build-ISO` job.
+- Only runs if the workflow is manually triggered (`workflow_dispatch`).
 
-## Infrastructure Requirements  
-- **Runner**: GitHub-hosted `ubuntu-latest`  
-- **Container Resources**: Inherits host specs (2-core CPU/7GB RAM typical)  
-- **Network**: Full internet access for dependency resolution  
+#### Steps:
+1. **Checkout Code**:
+   - Clones the repository again to ensure access to the latest code.
 
----
+2. **Download ISO Artifact**:
+   - Downloads the previously uploaded ISO artifact (`owlArchIso`) into the `./out` directory.
 
-## Security Considerations  
-- Uses official Arch Linux container to ensure build consistency  
-- Explicit dependency declaration in `pacman -S` command  
-- Artifact upload restricted to authenticated releases  
-- Forensic-ready tools pre-installed in ISO (e.g., Volatility, Ghidra)  
+3. **Create GitHub Release**:
+   - Uses the `softprops/action-gh-release@v2` action to create a GitHub release.
+   - Includes the downloaded ISO file as part of the release.
+   - Release details:
+     - Tag name: Matches the branch or tag name (`github.ref_name`).
+     - Release title: Includes the provided `ReleaseName` input.
 
----
+## Key Notes
 
-## Maintenance Notes  
-- To **update build tools**: Modify the `pacman -S` command in Docker step  
-- To **modify ISO contents**: Adjust files in repository's `releng/` directory  
-- To **change output format**: Update `mkarchiso` parameters  
+- **Privileged Mode**: The use of `--privileged` ensures that the container has sufficient permissions to perform tasks like mounting filesystems during the ISO build process.
+- **Artifact Management**: The workflow ensures that the ISO file is preserved and shared between jobs using GitHub's artifact storage.
+- **Manual Releases**: The `release` job is specifically designed for creating releases when the workflow is manually triggered, providing flexibility for versioning and distribution.
 
-This workflow ensures reproducible, secure builds of OwlArch for malware analysis and OSINT operations.  
+## Example Use Case
+
+This workflow is ideal for automating the creation and distribution of custom OwlArch ISOs. By leveraging GitHub Actions, you can streamline the build process and ensure consistent results across different environments.

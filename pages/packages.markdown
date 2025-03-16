@@ -99,7 +99,7 @@ Complete list of packages included in the OwlArch distribution, organized by cat
   <tr><td><a href="https://leku2020.github.io/OwlArchRepo/volatility">Volatility</a></td><td>Memory forensics framework</td></tr>  
   <tr><td><a href="https://leku2020.github.io/OwlArchRepo/wireshark">Wireshark</a></td><td>Network protocol analyzer</td></tr>  
   <tr><td><a href="https://leku2020.github.io/OwlArchRepo/zeek">Zeek</a></td><td>Network security monitoring</td></tr>  
-  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/owlsearch">OwlSearch</a></td><td>Malware OSINT identifier and analyser helped by VirusTotal and MalwareBazaar</td></tr>  
+  <tr><td><a href="https://leku2020.github.io/OwlArchRepo/owlsearch">OwlSearch</a></td><td>Malware OSINT identifier and analyser helped by multiple tools like VirusTotal, MalwareBazaar and Shodan</td></tr>  
 </table>  
 
 ---
