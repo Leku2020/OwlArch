@@ -16,6 +16,7 @@ iptables-nft
 base-devel
 python
 python3
+python-docutils
 
 # Bootloaders
 amd-ucode
