@@ -42,7 +42,7 @@ jobs:
           ln -sf /usr/lib/systemd/system/gdm.service vm/airootfs/etc/systemd/system/display-manager.service
       - name: Dos to Unix
         run: |
-          cd ${{ github.workspace }}/vm
+          cd vm
           find . -type f -print0 | xargs -0 dos2unix
           
       - name: Build ISO
