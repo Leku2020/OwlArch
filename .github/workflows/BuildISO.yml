@@ -40,7 +40,10 @@ jobs:
         run: |
           ln -s /usr/lib/systemd/system/vboxservice.service vm/airootfs/etc/systemd/system/multi-user.target.wants/vboxservice.service
           ln -sf /usr/lib/systemd/system/gdm.service vm/airootfs/etc/systemd/system/display-manager.service
-
+      - name: Dos to Unix
+        run: |
+          cd vm
+          find . -type f -print0 | xargs -0 dos2unix
       - name: Build ISO
         run: |
           mkarchiso -v -w work -o out vm/
