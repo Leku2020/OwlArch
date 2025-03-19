@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          pacman -Syu --noconfirm archiso git base-devel arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox virtualbox-host-modules-arch virtualbox-guest-utils acl
+          pacman -Syu --noconfirm archiso git base-devel arch-install-scripts awk dosfstools e2fsprogs erofs-utils findutils grub gzip libarchive libisoburn mtools openssl pacman sed squashfs-tools edk2-ovmf qemu shellcheck python-docutils gdm virtualbox virtualbox-host-modules-arch virtualbox-guest-utils acl dos2unix
       - name: Checkout repository
         uses: actions/checkout@v4
         
@@ -42,8 +42,9 @@ jobs:
           ln -sf /usr/lib/systemd/system/gdm.service vm/airootfs/etc/systemd/system/display-manager.service
       - name: Dos to Unix
         run: |
-          cd vm
+          cd ${{ github.workspace }}/vm
           find . -type f -print0 | xargs -0 dos2unix
+          
       - name: Build ISO
         run: |
           mkarchiso -v -w work -o out vm/
