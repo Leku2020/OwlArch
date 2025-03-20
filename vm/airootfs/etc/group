@@ -1,0 +1,11 @@
+root:x:0:root
+adm:x:4:owlarch
+wheel:x:10:owlarch
+uucp:x:14:owlarch
+owlarch:x:1000:
+basicUser:x:1001:analyst
+reversingGroup:x:1002:reversing
+malwareGroup:x:1003:malware
+netsecGroup:x:1004:netsec
+osintGroup:x:1005:osint
+debugGroup:x:1006:debugger
