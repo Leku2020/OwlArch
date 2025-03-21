@@ -134,6 +134,8 @@ theharvester-git
 volatility
 wireshark-cli
 zeek
+owlSearch
+proxychains-ng
 
 memtest86+
 memtest86+-efi
