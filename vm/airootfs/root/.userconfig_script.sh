@@ -1,24 +1,12 @@
 #!/usr/bin/env bash
 
-# Configuration of ACL's
-setfacl -m g:basicGroup:r-- /usr/bin/tools
-setfacl -m g:reversingGroup:rx /usr/bin/tools/reversing
-setfacl -m g:netsecGroup:rx /usr/bin/tools/netsec
-setfacl -m g:osintGroup:rx /usr/bin/tools/osint
-setfacl -m g:malwareGroup:rx /usr/bin/tools/malware
-echo "[+] ALC setup completed successfully."
-
-# Configuration of the IPTABLE rules
-#blocking output and input internet connections
-iptables -A OUTPUT -m owner --gid-owner reversingGroup -j REJECT
-iptables -A INPUT -m owner --gid-owner reversingGroup -j REJECT
-#allowing 127.0.0.1 localhost as some tools have optional tasks with it
-iptables -A OUTPUT -m owner --gid-owner reversingGroup -d 127.0.0.1 -j ACCEPT
-
-# Configuration of basicGroup
+# IPTABLE configuration for ALL USERS
 # Allow loopback traffic (localhost)
-iptables -A OUTPUT -m owner --uid-owner analyst -o lo -j ACCEPT
-iptables -A INPUT -m owner --uid-owner analyst -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+
+# Allow UDP for openVPN connection
+sudo iptables -A INPUT -p udp --dport 1194 -j ACCEPT
 
 # Allow SSH (port 22) for remote connections
 iptables -A OUTPUT -m owner --uid-owner analyst -p tcp --dport 22 -j ACCEPT
@@ -32,12 +20,44 @@ iptables -A INPUT -m owner --uid-owner analyst -p tcp --sport 443 -j ACCEPT
 
 # Allow DNS (port 53) for name resolution
 iptables -A OUTPUT -m owner --uid-owner analyst -p udp --dport 53 -j ACCEPT
-iptables -A OUTPUT -m owner --uid-owner analyst -p tcp --dport 53 -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 53 -j ACCEPT
 
-# Block all other outgoing traffic
+# Allows using Network Time Protocol
+iptables -A OUTPUT -p udp --dport 123 -j ACCEPT
+
+#HUNTER configuration
+# Radare2 web interface
+iptables -A INPUT -p tcp --dport 8000 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 8000 -m owner --uid-owner hunter -j ACCEPT
+
+# Ghidra server mode
+iptables -A INPUT -p tcp --dport 13100 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 13100 -m owner --uid-owner hunter -j ACCEPT
+
+# Cuckoo Web interface
+iptables -A INPUT -p tcp --dport 2042 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 2042 -m owner --uid-owner hunter -j ACCEPT
+
+# Cuckoo VM management
+iptables -A INPUT -p tcp --dport 5900 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 5900 -m owner --uid-owner hunter -j ACCEPT
+
+# Cuckoo server-worker communication
+iptables -A INPUT -p tcp --dport 10001 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 10001 -m owner --uid-owner hunter -j ACCEPT
+
+# SURICATA default ports
+iptables -A INPUT -p tcp --dport 31337 -m owner --uid-owner hunter -j ACCEPT
+iptables -A OUTPUT -p tcp --dport 31337 -m owner --uid-owner hunter -j ACCEPT
+
+# Block all other outgoing and incoming traffic
+iptables -A OUTPUT -m owner --uid-owner hunter -j DROP
+iptables -A INPUT -m owner --uid-owner hunter -j DROP
+
+#ANALYST configuration
+
+# Block all other outgoing and incoming traffic
 iptables -A OUTPUT -m owner --uid-owner analyst -j DROP
-
-# Block all other incoming traffic
 iptables -A INPUT -m owner --uid-owner analyst -j DROP
 
 #enabling persistency after boot
