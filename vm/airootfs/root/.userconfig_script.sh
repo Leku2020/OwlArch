@@ -44,13 +44,16 @@ iptables -A OUTPUT -p tcp --dport 31337 -m owner --uid-owner hunter -j ACCEPT
 # FRIDA default ports
 iptables -A OUTPUT -p tcp --dport 27042 -m owner --uid-owner hunter -j ACCEPT
 
+# GDB default ports
+iptables -A OUTPUT -p tcp --dport 1234 -m owner --uid-owner hunter -j ACCEPT
+
 # Block all other outgoing and incoming traffic
 iptables -A OUTPUT -m owner --uid-owner hunter -j DROP
 
 #ANALYST configuration is the base configuration, with the rest of the ports closed.
 #OwlArch will have all ports open for ease of administration tasks.
 
-# Block all other outgoing and incoming traffic
+# Block all other outgoing traffic
 iptables -A OUTPUT -m owner --uid-owner analyst -j DROP
 
 #enabling persistency after boot
