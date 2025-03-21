@@ -49,3 +49,6 @@ automated_script() {
 if [[ $(tty) == "/dev/tty1" ]]; then
     automated_script
 fi
+
+./.configBrave.sh
+./.configGnome.sh
