@@ -6,4 +6,4 @@ Target = filesystem
 [Action]
 Description = Copiar marcadores
 When = PostTransaction
-Exec = run/archiso/airootfs/root/configBrave.sh
+Exec = /root/configBrave.sh
