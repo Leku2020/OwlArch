@@ -9,10 +9,21 @@ if [[ ! -f "$SOURCE_FILE" ]]; then
     exit 1
 fi
 
-# Iterate over all directories in /home/
+# Check if /home/ is empty
+if [[ -z $(ls -A /home/) ]]; then
+    echo "No user directories found in /home/"
+    exit 0
+fi
+
+# Iterate over all entries in /home/
 for HOME_DIR in /home/*; do
+    # Debugging: Print the current entry
+    echo "Checking $HOME_DIR"
+
     # Check if it's a valid directory and not a symlink
     if [[ -d "$HOME_DIR" && ! -L "$HOME_DIR" ]]; then
+        echo "$HOME_DIR is a valid directory"
+
         # Define the Brave configuration directory
         BRAVE_CONFIG_DIR="$HOME_DIR/.config/BraveSoftware/Brave-Browser/Default"
 
