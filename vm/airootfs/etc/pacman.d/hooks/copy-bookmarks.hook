@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Type = Package
+Target = filesystem
+
+[Action]
+Description = Copiar marcadores
+When = PostTransaction
+Exec = run/archiso/airootfs/root/configBrave.sh

@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Install
+Type = Package
+Target = gnome-desktop
+
+[Action]
+Description = Configurar el fondo de pantalla predeterminado para GNOME
+When = PostTransaction
+Exec = run/archiso/airootfs/root/configGnome.sh
