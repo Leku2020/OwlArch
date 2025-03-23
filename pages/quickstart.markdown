@@ -1,7 +1,7 @@
 ---
 layout: home
 title: Quick Start Guide
-permalink: /
+permalink: /quickstart
 ---
 
 # OwlArch Dsitribution Quick Start Guide  
