@@ -48,14 +48,7 @@ For more info press [here](packages)
 ---
 
 ## Quick Start  
-1. **Download ISO**:  
-   [Latest Release](https://github.com/Leku2020/OwlArch/releases)
-
-2. **Run Tools**:  
-   ```bash  
-   wireshark  # Launch network analyzer  
-   volatility -f memdump.dmp imageinfo  # Memory forensics example  
-   ```  
+To read a quickstart guide on how to install and get started, [Click here!](https://leku2020.github.io/OwlArch/quickstart)
 
 ---
 
