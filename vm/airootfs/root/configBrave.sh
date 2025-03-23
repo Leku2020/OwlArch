@@ -2,6 +2,7 @@
 
 # Define the source file path
 SOURCE_FILE="/usr/share/brave-browser/Bookmarks"
+mkdir /home/owlarch /home/analyst /home/hunter
 
 # Check if the source file exists
 if [[ ! -f "$SOURCE_FILE" ]]; then

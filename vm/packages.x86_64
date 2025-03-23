@@ -82,11 +82,11 @@ tpm2-tss
 # GUI
 xorg
 xorg-server
-gnome
 gnome-tweaks
 gdm
 gnome-shell
 gnome-terminal
+gnome
 
 
 # User apps
