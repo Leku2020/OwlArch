@@ -1,64 +1,64 @@
 ---
 layout: home
-title: Index
+title: Quick Start Guide
 permalink: /
 ---
 
-# OwlArch Linux Distribution  
+# OwlArch Dsitribution Quick Start Guide  
 **OSINT & Malware Analysis Toolkit**  
 
-OwlArch is an Arch Linux-based distribution designed for **malware analysis**, **reverse engineering**, and **OSINT investigations**. It combines a minimalistic Arch environment with a curated suite of security tools, automated builds, and forensic readiness.  
+OwlArch is an Arch Linux-based distribution designed for all user types in the cybersecurity and investigations fields. Therefore, in order to help less technically experienced users, as well as advanced users who need to get started fast, a guide is documented with the basic steps to download and configure the machine. The process takes no longer than 5 minutes!
 
 ---
 
-## Key Features  
-- **Pre-installed Tools**: Plenty of security tools for malware analysis, network forensics, and OSINT  
-- **Automated Builds**: Continious ISO updates via GitHub Actions  
-- **Privacy-First**: Brave browser, DNS-over-HTTPS, and hardened kernel configs  
-- **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox  
-- **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/OwlArchRepo)  
+## There are 5 main steps to setup the environment.
 
----
+## 1. Downloading the distribution
+Download the distribution via the following link: [Latest Release](https://github.com/Leku2020/OwlArch/releases)
+Once downloaded, you should have a zipped ISO file, extract it and step 1 is complete!
 
-## Automated Build Process  
-OwlArch uses **GitHub Actions** for continuous integration and delivery:  
-- **Automated ISO Builds**: Automated generation of bootable ISO images  
-- **Containerized Workflow**: Secure, reproducible builds using Arch Linux Docker images  
-- **Artifact Management**: ISOs uploaded to GitHub Releases for easy access  
-- **Testing**: Built-in validation for package integrity and tool functionality  
+## 2. Creating a virtual machine
+For most use cases, the ISO can be used to create a new virtual machine. Download your favourite virtualisation software, such as VirtualBox or VMWare, and create a new machine.
+At this point, select the ISO to be used for this new machine, and set at least 4GB of ram and 12GB Storage to ensure a stable performance.
 
-[View the full GitHub Actions pipeline →](https://github.com/Leku2020/OwlArch/blob/main/.github/workflows/BuildISO.yml)  
+## 3. Launch the machine, log in and change credentials
+By default, the machines users have a preset password (the same as their name), and so it is IMPORTANT to change credentials.
+For this step, it is recommended to use the owlarch user to log in, to escalate privileges and change all of the users passwords at once. This can be done executing the following commands:
+```bash  
+   sudo su 
+   ``` 
+And once in sudo mode, copy and paste the following command, replacing "newpassword" with the desired one:
+A minimum of 12 characters, mixture of lower and upper case letters, digits and symbols should be used to maximise security.
+```bash  
+   echo "analyst:newpassword” | sudo chpasswd
+   echo "hunter:newpassword" | sudo chpasswd
+   echo "owlarch:newpassword" | sudo chpasswd
+   echo "root:newpassword" | sudo chpasswd
+   ```
+## 4. Execute the brave configuration script
+Brave browser comes preinstalled for all users. This browser is preinstalled due to its major security advantages and capabilities. However, bookmarks need to be set per user, so to save end users time, a script was created to assign the most common OSINT tools to the bookmarks. Simply execute the following command on the chosen user (ANALYST OR HUNTER) and brave will be configured.
+```bash  
+   echo "analyst:newpassword” | sudo chpasswd
+   ```
+## 5. Familiarise yourself with the tools.
 
-And for more info press [here](actionsiso)
+The preinstalled tools are listed below:
 
----
-
-## Tools Included
-
-| Category               | Tools                                                                 |  
-|------------------------|-----------------------------------------------------------------------|  
+| Category                | Tools                                                                  |  
+|-------------------------|-----------------------------------------------------------------------|  
 | **Reverse Engineering** | Ghidra, Radare2, Capstone, Binary Ninja (optional)                    |  
 | **Malware Analysis**    | Volatility, Pwndbg, Cuckoo Sandbox (integration)                      |  
-| **Network Analysis**    | Wireshark, Suricata, Zeek, TCPDump                                    |  
+| **Network Analysis**    | Wireshark, Suricata, Zeek, TCPDump, OpenVPN, ProxyChains-NG           |  
 | **OSINT**               | Maltego, Spiderfoot, theHarvester, Shodan CLI, OwlSearch              |  
 | **Debugging**           | GDB, Frida, QEMU                                                      |  
 
-For more info press [here](packages)
+For more info on how they work, simply press [here](packages)
+
+AND DONE! You are ready to start investigating. Happy Hunting!
 
 ---
 
-## Quick Start  
-1. **Download ISO**:  
-   [Latest Release](https://github.com/Leku2020/OwlArch/releases)
-
-2. **Run Tools**:  
-   ```bash  
-   wireshark  # Launch network analyzer  
-   volatility -f memdump.dmp imageinfo  # Memory forensics example  
-   ```  
-
----
-
+## Other useful documentation
 ## Documentation  
 - **About**: [About](about)  
 - **Build Process**: [ISO Pipeline](https://github.com/Leku2020/OwlArch/blob/main/.github/workflows/BuildISO.yml)
