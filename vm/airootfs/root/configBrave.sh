@@ -43,3 +43,4 @@ for HOME_DIR in /home/*; do
 done
 
 echo "Process completed."
+locale-gen
