@@ -1,0 +1,328 @@
+{
+    "checksum": "acea1342b4d0ce39d8aea16f8268d393",
+    "roots": {
+       "bookmark_bar": {
+          "children": [ {
+             "children": [ {
+                "date_added": "13387226238000000",
+                "date_last_used": "0",
+                "guid": "9f7026cc-22e1-4c73-84ba-3c50007c6c92",
+                "id": "6",
+                "name": "Shodan Search Engine",
+                "type": "url",
+                "url": "https://www.shodan.io/"
+             }, {
+                "date_added": "13387226243000000",
+                "date_last_used": "13387226467703610",
+                "guid": "c1684a2c-8db0-4992-8351-7134a7843ce0",
+                "id": "7",
+                "name": "Censys",
+                "type": "url",
+                "url": "https://censys.com/"
+             }, {
+                "date_added": "13387226247000000",
+                "date_last_used": "0",
+                "guid": "0d4a85de-9aed-46ec-a3b2-509910ac38de",
+                "id": "8",
+                "name": "Intelligence X",
+                "type": "url",
+                "url": "https://intelx.io/"
+             }, {
+                "date_added": "13387226252000000",
+                "date_last_used": "0",
+                "guid": "1bdf66bb-d00e-4e28-9c9e-39b0cda979eb",
+                "id": "9",
+                "name": "OSINT Framework",
+                "type": "url",
+                "url": "https://osintframework.com/"
+             }, {
+                "date_added": "13387226255000000",
+                "date_last_used": "13387226456347012",
+                "guid": "57c8df2e-fa61-4b73-890d-2300febe3a5b",
+                "id": "10",
+                "name": "Maltego",
+                "type": "url",
+                "url": "https://www.maltego.com/"
+             } ],
+             "date_added": "13387226301966575",
+             "date_last_used": "0",
+             "date_modified": "0",
+             "guid": "1e685469-991c-40e8-96d1-cb475c2e2bb1",
+             "id": "5",
+             "name": "Osint Tools",
+             "type": "folder"
+          }, {
+             "children": [ {
+                "date_added": "13387226431713600",
+                "date_last_used": "0",
+                "guid": "968eac9c-251d-4966-b1dc-5a23f0b5fb79",
+                "id": "12",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "VirusTotal",
+                "type": "url",
+                "url": "https://www.virustotal.com/gui/home/upload"
+             }, {
+                "date_added": "13387226488003461",
+                "date_last_used": "0",
+                "guid": "0432b567-a1a0-49af-8e1c-1b81f18f1a93",
+                "id": "14",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Hybrid Analysis",
+                "type": "url",
+                "url": "https://hybrid-analysis.com/"
+             }, {
+                "date_added": "13387226498892487",
+                "date_last_used": "0",
+                "guid": "26d2b13a-e706-493c-ba4c-83963565fc52",
+                "id": "15",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "ANY.RUN - Interactive Online Malware Sandbox",
+                "type": "url",
+                "url": "https://any.run/"
+             }, {
+                "date_added": "13387226503324287",
+                "date_last_used": "0",
+                "guid": "86ab7726-09d7-4ce6-b292-c5415c5122da",
+                "id": "16",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "JoeSandbox",
+                "type": "url",
+                "url": "https://www.joesandbox.com/#windows"
+             }, {
+                "date_added": "13387226512461025",
+                "date_last_used": "0",
+                "guid": "a69e3bcd-a2bd-4a09-9cf6-82eb62fd75aa",
+                "id": "17",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "UnpacMe",
+                "type": "url",
+                "url": "https://www.unpac.me/"
+             } ],
+             "date_added": "13387226450535452",
+             "date_last_used": "0",
+             "date_modified": "13387226512461025",
+             "guid": "b59722e4-e157-41af-976a-9c9c3b90afcd",
+             "id": "13",
+             "name": "Malware Analysis",
+             "type": "folder"
+          }, {
+             "children": [ {
+                "date_added": "13387226570831560",
+                "date_last_used": "0",
+                "guid": "01cb5ea3-d930-4b96-ae1c-d55c22f0f146",
+                "id": "19",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "AlienVault",
+                "type": "url",
+                "url": "https://otx.alienvault.com/"
+             }, {
+                "date_added": "13387226595232917",
+                "date_last_used": "0",
+                "guid": "a9301f85-e312-4f69-8bfa-fb659f7675d4",
+                "id": "20",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "AbuseIPDB",
+                "type": "url",
+                "url": "https://www.abuseipdb.com/"
+             }, {
+                "date_added": "13387226602357363",
+                "date_last_used": "0",
+                "guid": "df3f64de-8456-4d60-8394-fa05f3297806",
+                "id": "21",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "URLhaus",
+                "type": "url",
+                "url": "https://urlhaus.abuse.ch/"
+             }, {
+                "date_added": "13387226609470187",
+                "date_last_used": "0",
+                "guid": "0cdeb684-32f3-4c28-8eb3-a5a976f36259",
+                "id": "22",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Feodo Tracker",
+                "type": "url",
+                "url": "https://feodotracker.abuse.ch/"
+             } ],
+             "date_added": "13387226532625465",
+             "date_last_used": "0",
+             "date_modified": "13387226609470187",
+             "guid": "3355f696-7480-4789-b055-65659f8bf19a",
+             "id": "18",
+             "name": "Threat Intelligence",
+             "type": "folder"
+          }, {
+             "children": [ {
+                "date_added": "13387226685533200",
+                "date_last_used": "0",
+                "guid": "c82276af-e4ac-4787-beb9-c98de3527a56",
+                "id": "24",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Wireshark",
+                "type": "url",
+                "url": "https://www.wireshark.org/"
+             }, {
+                "date_added": "13387226693722926",
+                "date_last_used": "0",
+                "guid": "124d2a64-78d7-4924-8232-843abc310f36",
+                "id": "25",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "DynamiteLab - A Free Online PCAP File Viewer and Analyzer",
+                "type": "url",
+                "url": "https://lab.dynamite.ai/"
+             }, {
+                "date_added": "13387226698646977",
+                "date_last_used": "0",
+                "guid": "bdc7a8d6-dbcb-4ec0-828e-33f01ceb7aef",
+                "id": "26",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Online investigation tool - Reverse IP, NS, MX, WHOIS and Search Tools",
+                "type": "url",
+                "url": "https://dnslytics.com/"
+             }, {
+                "date_added": "13387226702201832",
+                "date_last_used": "0",
+                "guid": "d6fba569-7ada-423c-a37e-e80b5d5ff4c5",
+                "id": "27",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Free online network tools - traceroute, nslookup, dig, whois lookup, ping - IPv6",
+                "type": "url",
+                "url": "https://centralops.net/co/"
+             } ],
+             "date_added": "13387226682744851",
+             "date_last_used": "0",
+             "date_modified": "13387226702201832",
+             "guid": "e9074368-4700-466a-a2c2-082ea0ee885f",
+             "id": "23",
+             "name": "Network Analysis",
+             "type": "folder"
+          }, {
+             "children": [ {
+                "date_added": "13387226733041888",
+                "date_last_used": "0",
+                "guid": "b115e544-50f5-4548-80d3-8c97243f837c",
+                "id": "29",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Autopsy",
+                "type": "url",
+                "url": "https://sleuthkit.org/autopsy/"
+             }, {
+                "date_added": "13387226741365497",
+                "date_last_used": "0",
+                "guid": "a6927e19-a7a2-4b24-afd4-40a90734a287",
+                "id": "31",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Eric Zimmerman's tools",
+                "type": "url",
+                "url": "https://ericzimmerman.github.io/#!index.md"
+             } ],
+             "date_added": "13387226731311875",
+             "date_last_used": "0",
+             "date_modified": "13387226741365497",
+             "guid": "cfa9725f-937d-4251-a15b-37867a85fa1a",
+             "id": "28",
+             "name": "Digital Forensics",
+             "type": "folder"
+          }, {
+             "children": [ {
+                "date_added": "13387226776820981",
+                "date_last_used": "0",
+                "guid": "87fd3271-9a7e-4374-9e11-76e30a412a11",
+                "id": "34",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "Krebs on Security – In-depth security news and investigation",
+                "type": "url",
+                "url": "https://krebsonsecurity.com/"
+             }, {
+                "date_added": "13387226779681119",
+                "date_last_used": "0",
+                "guid": "923e7445-f655-4c89-86a1-e830dec58200",
+                "id": "35",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "The Hacker News | #1 Trusted Cybersecurity News Site",
+                "type": "url",
+                "url": "https://thehackernews.com/"
+             }, {
+                "date_added": "13387226782537142",
+                "date_last_used": "0",
+                "guid": "fc187c2d-e4d9-4f5b-b33d-f5349f7c7b98",
+                "id": "36",
+                "meta_info": {
+                   "power_bookmark_meta": ""
+                },
+                "name": "BleepingComputer | Cybersecurity, Technology News and Support",
+                "type": "url",
+                "url": "https://www.bleepingcomputer.com/"
+             } ],
+             "date_added": "13387226774258734",
+             "date_last_used": "0",
+             "date_modified": "13387226782537142",
+             "guid": "1a57d7bb-10e1-4e8c-9f83-1a8d5b4e08af",
+             "id": "32",
+             "name": "Cibersecurity News",
+             "type": "folder"
+          } ],
+          "date_added": "13387226192071280",
+          "date_last_used": "0",
+          "date_modified": "13387226733041888",
+          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+          "id": "1",
+          "name": "Marcadores",
+          "type": "folder"
+       },
+       "other": {
+          "children": [  ],
+          "date_added": "13387226192071282",
+          "date_last_used": "0",
+          "date_modified": "0",
+          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+          "id": "2",
+          "name": "Otros marcadores",
+          "type": "folder"
+       },
+       "synced": {
+          "children": [  ],
+          "date_added": "13387226192071660",
+          "date_last_used": "0",
+          "date_modified": "0",
+          "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+          "id": "3",
+          "name": "Marcadores del móvil",
+          "type": "folder"
+       }
+    },
+    "version": 1
+ }
