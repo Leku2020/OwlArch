@@ -1,0 +1,55 @@
+[org/gnome/control-center]
+last-panel='background'
+window-state=(800, 568, true)
+ 
+[org/gnome/desktop/app-folders]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus']
+ 
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+ 
+[org/gnome/desktop/app-folders/folders/System]
+apps=['nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.SystemMonitor.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+ 
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+translate=true
+ 
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+ 
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/background.png'
+picture-uri-dark='file:///usr/share/backgrounds/gnome/background.png'
+primary-color='#3071AE'
+secondary-color='#000000'
+ 
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'us')]
+ 
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/gnome/background.png'
+primary-color='#3071AE'
+secondary-color='#000000'
+ 
+[org/gnome/evolution-data-server]
+migrated=true
+ 
+[org/gnome/shell]
+welcome-dialog-last-shown-version='48.0'
+ 
+[org/gnome/software]
+check-timestamp=int64 1743062204
+first-run=false
+flatpak-purge-timestamp=int64 1743070475
