@@ -2,6 +2,7 @@
 
 # Define the source file path
 SOURCE_FILE="/usr/share/brave-browser/Bookmarks"
+SOURCE_PREFERENCES="/usr/share/brave-browser/Preferences"
 mkdir /home/owlarch /home/analyst /home/hunter
 
 # Check if the source file exists
@@ -36,6 +37,13 @@ for HOME_DIR in /home/*; do
             echo "Bookmarks copied successfully to $BRAVE_CONFIG_DIR"
         else
             echo "Error: Failed to copy Bookmarks to $BRAVE_CONFIG_DIR"
+        fi
+
+        # Copy the Preferences file to the Brave configuration directory
+        if cp "$SOURCE_PREFERENCES" "$BRAVE_CONFIG_DIR/Preferences"; then
+            echo "Preferences copied successfully to $BRAVE_CONFIG_DIR"
+        else
+            echo "Error: Failed to copy Preferences to $BRAVE_CONFIG_DIR"
         fi
     else
         echo "Skipping $HOME_DIR (not a valid directory or is a symlink)"
