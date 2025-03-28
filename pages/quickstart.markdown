@@ -60,7 +60,7 @@ AND DONE! You are ready to start investigating. Happy Hunting!
 - **Build Process**: [Pages Pipeline](https://github.com/Leku2020/OwlArch/blob/main/.github/workflows/PublishPages.yml)
 - **Build Process**: [Pages Documentation](actionspages)
 - **Tool Docs**: [Package Repository](https://leku2020.github.io/OwlArchRepo)  
-- **Create you repo**: [Your repo Documentation](yourownrepo)
+- **Create you distro**: [Your distro Documentation](yourowndistro)
 
 ---
 

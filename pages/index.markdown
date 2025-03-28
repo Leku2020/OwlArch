@@ -58,7 +58,7 @@ To read a quickstart guide on how to install and get started, [Click here!](http
 - **Build Process**: [Pages Pipeline](https://github.com/Leku2020/OwlArch/blob/main/.github/workflows/PublishPages.yml)
 - **Build Process**: [Pages Documentation](actionspages)
 - **Tool Docs**: [Package Repository](https://leku2020.github.io/OwlArchRepo)  
-- **Create you repo**: [Your repo Documentation](yourownrepo)
+- **Create your distro**: [Your distro Documentation](yourowndistro)
 
 ---
 
