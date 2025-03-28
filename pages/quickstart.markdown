@@ -11,7 +11,7 @@ OwlArch is an Arch Linux-based distribution designed for all user types in the c
 
 ---
 
-## There are 5 main steps to setup the environment.
+## There are 4 simple steps to setup the environment.
 
 ## 1. Downloading the distribution
 Download the distribution via the following link: [Latest Release](https://github.com/Leku2020/OwlArch/releases)
@@ -35,12 +35,7 @@ A minimum of 12 characters, mixture of lower and upper case letters, digits and 
    echo "owlarch:newpassword" | sudo chpasswd
    echo "root:newpassword" | sudo chpasswd
    ```
-## 4. Execute the brave configuration script
-Brave browser comes preinstalled for all users. This browser is preinstalled due to its major security advantages and capabilities. However, bookmarks need to be set per user, so to save end users time, a script was created to assign the most common OSINT tools to the bookmarks. Simply execute the following command on the chosen user (ANALYST OR HUNTER) and brave will be configured.
-```bash  
-   echo "analyst:newpassword” | sudo chpasswd
-   ```
-## 5. Familiarise yourself with the tools.
+## 4. Familiarise yourself with the tools.
 
 The preinstalled tools are listed below:
 
