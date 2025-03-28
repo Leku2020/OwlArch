@@ -34,7 +34,9 @@ And for more info press [here](https://leku2020.github.io/OwlArch)
 | **Malware Analysis**    | Volatility, Pwndbg, Cuckoo Sandbox (integration)                      |  
 | **Network Analysis**    | Wireshark, Suricata, Zeek, TCPDump                                    |  
 | **OSINT**               | Maltego, Spiderfoot, theHarvester, Shodan CLI                         |  
-| **Debugging**           | GDB, Frida, QEMU                                                      |  
+| **Debugging**           | GDB, Frida, QEMU                                                      |
+
+Furthermore, OwlArch contains location obfuscation applications for hunting online, providing ready to launch **VPN and Reverse Proxy** capabilities with custom configurations.
 
 For more info press [here](packages)
 
