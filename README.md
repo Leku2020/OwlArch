@@ -6,19 +6,19 @@ OwlArch is an Arch Linux-based distribution designed for **malware analysis**, *
 ---
 
 ## Key Features  
-- **Pre-installed Tools**: Plenty of security tools for malware analysis, network forensics, and OSINT  
-- **Automated Builds**: Daily ISO updates via GitHub Actions  
-- **Privacy-First**: Brave browser, and hardened kernel configs  
-- **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox  
+- **Pre-installed Tools**: Plenty of security tools for malware analysis, network forensics, and OSINT tasks.  
+- **Automated Builds**: Daily ISO updates via GitHub Actions.
+- **Privacy-First**: Brave browser, and hardened kernel configurations.
+- **Virtualization Ready**: OVF/VMDK templates for VMware/VirtualBox.
 - **Customizable**: Easily add/remove tools via the [OwlArch Package Repository](https://github.com/Leku2020/OwlArchRepo)  
 
 ---
 ## Automated Build Process  
 OwlArch uses **GitHub Actions** for continuous integration and delivery:  
-- **Daily ISO Builds**: Automated generation of bootable ISO images  
-- **Containerized Workflow**: Secure, reproducible builds using Arch Linux Docker images  
-- **Artifact Management**: ISOs uploaded to GitHub Releases for easy access  
-- **Testing**: Built-in validation for package integrity and tool functionality  
+- **Daily ISO Builds**: Automated generation of bootable ISO images. 
+- **Containerized Workflow**: Secure, reproducible builds using Arch Linux Docker images.  
+- **Artifact Management**: ISOs uploaded to GitHub Releases for easy access.
+- **Testing**: Built-in validation for package integrity and tool functionality.
 
 [View the full GitHub Actions pipeline →](https://github.com/Leku2020/OwlArchRepo/blob/main/.github/workflows)  
 
@@ -28,8 +28,8 @@ And for more info press [here](https://leku2020.github.io/OwlArch)
 
 ## Tools Included
 
-| Category               | Tools                                                                 |  
-|------------------------|-----------------------------------------------------------------------|  
+| Category                | Tools                                                                 |  
+|-------------------------|-----------------------------------------------------------------------|  
 | **Reverse Engineering** | Ghidra, Radare2, Capstone, Binary Ninja (optional)                    |  
 | **Malware Analysis**    | Volatility, Pwndbg, Cuckoo Sandbox (integration)                      |  
 | **Network Analysis**    | Wireshark, Suricata, Zeek, TCPDump                                    |  
@@ -41,14 +41,7 @@ For more info press [here](packages)
 ---
 
 ## Quick Start  
-1. **Download ISO**:  
-   [Latest Release](https://github.com/Leku2020/OwlArchRepo/releases) | [SHA256 Checksum](https://leku2020.github.io/OwlArch/checksums.txt)  
-
-2. **Run Tools**:  
-   ```bash  
-   wireshark  # Launch network analyzer  
-   volatility -f memdump.dmp imageinfo  # Memory forensics example  
-   ```  
+1. [Click here to view the quickstart guide!](https://github.com/Leku2020/OwlArch/quickstart)
 
 ---
 
